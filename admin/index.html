@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shahid Clothes • International Admin Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ==================== 0. ADMIN LOGIN GATEWAY ==================== -->
+  <div class="admin-login-screen" id="adminLoginGate">
+    <div class="login-backdrop-glow"></div>
+    <div class="login-card">
+      <div class="login-brand">
+        <div class="login-brand-logo-container">
+          <img src="/assets/images/shahid_clothes_logo.png" alt="Shahid Clothes - Wear Your Story" class="login-logo-img">
+        </div>
+        <div class="login-brand-tag"><i class="fa-solid fa-shield-halved"></i> SHAHID CLOTHES • EXECUTIVE SECURITY GATE</div>
+      </div>
+
+      <div class="login-header">
+        <h2>Restricted Access Portal</h2>
+        <p>Enter your private administrator credentials to unlock the store management dashboard.</p>
+      </div>
+
+      <!-- Login Alert / Error Banner -->
+      <div class="login-alert-banner" id="adminLoginAlert" style="display: none;">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <span id="adminLoginAlertMsg">Invalid credentials</span>
+      </div>
+
+      <form id="adminLoginForm" onsubmit="handleAdminLogin(event)">
+        <div class="login-field-group">
+          <label for="adminLoginEmail">Administrator Gmail / Username</label>
+          <div class="login-input-wrap">
+            <i class="fa-solid fa-envelope input-icon"></i>
+            <input type="text" id="adminLoginEmail" placeholder="shahid3460817@gmail.com" required autocomplete="username">
+          </div>
+        </div>
+
+        <div class="login-field-group">
+          <label for="adminLoginPassword">Private Master Password</label>
+          <div class="login-input-wrap">
+            <i class="fa-solid fa-lock input-icon"></i>
+            <input type="password" id="adminLoginPassword" placeholder="Enter password..." required autocomplete="current-password">
+            <button type="button" class="toggle-password-btn" onclick="togglePasswordVisibility()" aria-label="Toggle password visibility">
+              <i class="fa-regular fa-eye" id="pwdEyeIcon"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="login-options-row">
+          <label class="remember-checkbox-label">
+            <input type="checkbox" id="adminRememberMe" checked>
+            <span>Stay signed in on this device</span>
+          </label>
+          <span class="security-badge"><i class="fa-solid fa-lock"></i> 256-Bit SSL Enforced</span>
+        </div>
+
+        <button type="submit" class="login-submit-btn" id="adminLoginSubmitBtn">
+          <span>Authenticate & Open Admin Panel</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+
+      <div class="login-security-notice">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Restricted access for Shahid Clothes administration only. Unauthorized access attempts are monitored and blocked.</span>
+      </div>
+
+      <div class="login-footer">
+        <a href="/" class="return-storefront-link">
+          <i class="fa-solid fa-arrow-left"></i> Return to Live Storefront
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin App Wrapper (Protected View) -->
+  <div class="admin-wrapper" id="adminApp" style="display: none;">
+
+    <!-- 1. SIDEBAR NAVIGATION -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-brand-container">
+          <img src="/assets/images/shahid_clothes_logo.png" alt="Shahid Clothes" class="admin-sidebar-logo-img">
+        </div>
+        <button class="close-sidebar-btn" onclick="toggleSidebar()" aria-label="Close sidebar">&times;</button>
+      </div>
+
+      <div class="sidebar-user-card">
+        <div class="user-avatar">
+          <i class="fa-solid fa-user-shield"></i>
+        </div>
+        <div class="user-info">
+          <strong id="sidebarUserName">Store Manager</strong>
+          <span id="sidebarUserRole">Admin Portal</span>
+        </div>
+        <span class="db-status-dot online" title="MySQL Connected"></span>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">MAIN MENU</div>
+        <a href="#dashboard" class="nav-link active" onclick="switchTab('dashboard', event)">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#orders" class="nav-link" onclick="switchTab('orders', event)">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Orders & COD</span>
+          <span class="nav-badge" id="sidebarOrdersBadge">0</span>
+        </a>
+        <a href="#products" class="nav-link" onclick="switchTab('products', event)">
+          <i class="fa-solid fa-shirt"></i>
+          <span>Product Catalog</span>
+        </a>
+        <a href="#add-product" class="nav-link" onclick="openAddProductModal(event)">
+          <i class="fa-solid fa-circle-plus"></i>
+          <span>Add New Product</span>
+        </a>
+
+        <div class="nav-section-label">COMMUNICATION & SYSTEM</div>
+        <a href="#whatsapp" class="nav-link" onclick="openWhatsAppBroadcaster(event)">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Hub</span>
+        </a>
+        <a href="#settings" class="nav-link" onclick="switchTab('settings', event)">
+          <i class="fa-solid fa-database"></i>
+          <span>Database & MySQL</span>
+        </a>
+        <a href="/" target="_blank" class="nav-link external-link">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <span>View Live Store</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="system-status-indicator">
+          <i class="fa-solid fa-server"></i>
+          <div>
+            <div class="status-name" id="dbStatusLabel">MySQL Connected</div>
+            <div class="status-sub">shahid_clothes_db</div>
+          </div>
+        </div>
+        <button class="sidebar-logout-btn" onclick="handleAdminLogout()" title="Sign Out">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Overlay for mobile sidebar -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+    <!-- 2. MAIN CONTENT AREA -->
+    <div class="admin-main">
+
+      <!-- Top Header Bar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle-btn" onclick="toggleSidebar()" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="page-title-wrap">
+            <h1 id="adminPageTitle">Dashboard Overview</h1>
+            <p id="adminPageSubtitle">Real-time store metrics, customer orders, and MySQL inventory</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="topbar-btn" onclick="refreshAdminData()" title="Refresh Data">
+            <i class="fa-solid fa-rotate"></i>
+            <span class="btn-text">Sync</span>
+          </button>
+          <button class="topbar-btn btn-primary" onclick="openAddProductModal()">
+            <i class="fa-solid fa-plus"></i>
+            <span class="btn-text">Add Product</span>
+          </button>
+          <a href="/" target="_blank" class="topbar-btn btn-outline" title="Open Storefront">
+            <i class="fa-solid fa-store"></i>
+            <span class="btn-text">Storefront</span>
+          </a>
+          <button class="topbar-btn logout-topbar-btn" onclick="handleAdminLogout()" title="Sign Out">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="btn-text">Logout</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- VIEW 1: DASHBOARD TAB -->
+      <section id="tabDashboard" class="admin-tab-content active">
+        <!-- Metric KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap revenue-icon">
+              <i class="fa-solid fa-coins"></i>
+            </div>
+            <div class="kpi-details">
+              <span class="kpi-label">TOTAL REVENUE (PKR)</span>
+              <h2 class="kpi-value" id="kpiRevenue">Rs. 0</h2>
+              <span class="kpi-trend positive"><i class="fa-solid fa-arrow-trend-up"></i> Live Sales From MySQL</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap orders-icon">
+              <i class="fa-solid fa-box"></i>
+            </div>
+            <div class="kpi-details">
+              <span class="kpi-label">TOTAL ORDERS</span>
+              <h2 class="kpi-value" id="kpiTotalOrders">0</h2>
+              <span class="kpi-trend neutral" id="kpiDeliveredSummary">0 Delivered</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap pending-icon">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <div class="kpi-details">
+              <span class="kpi-label">PENDING / COD SHIPMENTS</span>
+              <h2 class="kpi-value" id="kpiPendingOrders">0</h2>
+              <span class="kpi-trend warning"><i class="fa-solid fa-clock"></i> Requires Courier Dispatch</span>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon-wrap products-icon">
+              <i class="fa-solid fa-tags"></i>
+            </div>
+            <div class="kpi-details">
+              <span class="kpi-label">ACTIVE SUITS IN STOCK</span>
+              <h2 class="kpi-value" id="kpiProductsCount">0</h2>
+              <span class="kpi-trend positive"><i class="fa-solid fa-circle-check"></i> Ready in Catalog</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dashboard Split Grid -->
+        <div class="dashboard-split-grid">
+          <!-- Recent Orders Card -->
+          <div class="content-card recent-orders-card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>Recent Orders (Cash on Delivery)</h3>
+                <span>Latest purchases placed by customers</span>
+              </div>
+              <button class="card-action-link" onclick="switchTab('orders', event)">View All Orders &rarr;</button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table" id="recentOrdersTable">
+                <thead>
+                  <tr>
+                    <th>ORDER ID</th>
+                    <th>CUSTOMER</th>
+                    <th>CITY</th>
+                    <th>AMOUNT</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                  </tr>
+                </thead>
+                <tbody id="recentOrdersTableBody">
+                  <tr>
+                    <td colspan="6" class="table-loading">Loading live orders from MySQL...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Quick Action / Store Perks Card -->
+          <div class="content-card quick-links-card">
+            <div class="card-header">
+              <div class="card-title-group">
+                <h3>Store Quick Actions</h3>
+                <span>Frequently used operations</span>
+              </div>
+            </div>
+
+            <div class="quick-actions-list">
+              <div class="quick-action-item" onclick="openAddProductModal()">
+                <div class="qa-icon" style="background-color: #E8F5E9; color: #2E7D32;">
+                  <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="qa-info">
+                  <strong>Add New Suit to Catalog</strong>
+                  <p>Upload unstitched, pret, or luxury suit to database</p>
+                </div>
+                <i class="fa-solid fa-chevron-right qa-arrow"></i>
+              </div>
+
+              <div class="quick-action-item" onclick="filterOrdersByStatus('PENDING')">
+                <div class="qa-icon" style="background-color: #FFF3E0; color: #E65100;">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="qa-info">
+                  <strong>View Pending Deliveries</strong>
+                  <p>Process pending orders for courier booking</p>
+                </div>
+                <i class="fa-solid fa-chevron-right qa-arrow"></i>
+              </div>
+
+              <div class="quick-action-item" onclick="switchTab('settings', event)">
+                <div class="qa-icon" style="background-color: #E3F2FD; color: #1565C0;">
+                  <i class="fa-solid fa-server"></i>
+                </div>
+                <div class="qa-info">
+                  <strong>MySQL Server Health</strong>
+                  <p>Check database connection pool and table stats</p>
+                </div>
+                <i class="fa-solid fa-chevron-right qa-arrow"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 2: ORDERS MANAGEMENT TAB -->
+      <section id="tabOrders" class="admin-tab-content">
+        <div class="content-card">
+          <!-- Filters & Search Toolbar -->
+          <div class="orders-toolbar">
+            <!-- Filter Pills -->
+            <div class="order-status-tabs">
+              <button class="status-tab active" onclick="filterOrdersByStatus('ALL', this)">All Orders</button>
+              <button class="status-tab" onclick="filterOrdersByStatus('PENDING', this)">Pending</button>
+              <button class="status-tab" onclick="filterOrdersByStatus('CONFIRMED', this)">Confirmed</button>
+              <button class="status-tab" onclick="filterOrdersByStatus('DISPATCHED', this)">Dispatched</button>
+              <button class="status-tab" onclick="filterOrdersByStatus('DELIVERED', this)">Delivered</button>
+              <button class="status-tab" onclick="filterOrdersByStatus('CANCELLED', this)">Cancelled</button>
+            </div>
+
+            <!-- Search Field -->
+            <div class="order-search-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="orderSearchInput" placeholder="Search customer, phone, Order ID, city..." oninput="searchOrders(this.value)">
+            </div>
+          </div>
+
+          <!-- Full Orders Table -->
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ORDER ID</th>
+                  <th>DATE</th>
+                  <th>CUSTOMER & PHONE</th>
+                  <th>DELIVERY ADDRESS</th>
+                  <th>PAYMENT</th>
+                  <th>TOTAL</th>
+                  <th>ORDER STATUS</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <tr>
+                  <td colspan="8" class="table-loading">Fetching orders from MySQL database...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 3: PRODUCT CATALOG TAB -->
+      <section id="tabProducts" class="admin-tab-content">
+        <div class="content-card">
+          <div class="products-toolbar">
+            <div class="category-filter-group">
+              <select id="prodCategorySelect" onchange="filterProductsByCategory(this.value)">
+                <option value="all">All Categories</option>
+                <option value="unstitched">Unstitched</option>
+                <option value="pret">Pret Ready-to-Wear</option>
+                <option value="luxury">Luxury Formals</option>
+                <option value="men">Men's Collection</option>
+                <option value="accessories">Accessories & Shawls</option>
+                <option value="boutique">Boutique Couture</option>
+              </select>
+            </div>
+
+            <div class="order-search-box" style="max-width: 320px;">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="productSearchInput" placeholder="Search suit title, SKU, fabric..." oninput="searchProducts(this.value)">
+            </div>
+
+            <button class="btn btn-primary" onclick="openAddProductModal()">
+              <i class="fa-solid fa-plus"></i> Add New Suit
+            </button>
+          </div>
+
+          <!-- Products Table -->
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>PRODUCT</th>
+                  <th>SKU / ID</th>
+                  <th>CATEGORY</th>
+                  <th>FABRIC</th>
+                  <th>PRICE (PKR)</th>
+                  <th>STOCK</th>
+                  <th>STATUS</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody id="productsTableBody">
+                <tr>
+                  <td colspan="8" class="table-loading">Loading catalog from database...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 4: SETTINGS & DATABASE STATUS TAB -->
+      <section id="tabSettings" class="admin-tab-content">
+        <div class="content-card" style="max-width: 850px;">
+          <div class="card-header">
+            <div class="card-title-group">
+              <h3>MySQL Database & Server Configuration</h3>
+              <span>Database connectivity, credentials, and health audit</span>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            <div class="settings-row">
+              <label>Database Status</label>
+              <div>
+                <span class="status-pill status-delivered" id="settingsDbStatus"><i class="fa-solid fa-check"></i> Connected to MySQL (shahid_clothes_db)</span>
+              </div>
+            </div>
+
+            <div class="settings-row">
+              <label>Database Host & Port</label>
+              <code>localhost:3306</code>
+            </div>
+
+            <div class="settings-row">
+              <label>Active Database Name</label>
+              <code>shahid_clothes_db</code>
+            </div>
+
+            <div class="settings-row">
+              <label>Active Database User</label>
+              <code>root</code>
+            </div>
+
+            <div class="settings-row">
+              <label>Tables Initialized</label>
+              <p style="font-size: 0.85rem; color: #333;">
+                <code>categories</code>, <code>products</code>, <code>product_sizes</code>, <code>orders</code>, <code>order_items</code>, <code>coupons</code>, <code>admin_users</code>
+              </p>
+            </div>
+
+            <div class="settings-row">
+              <label>Courier Partners Configured</label>
+              <span>CallCourier / TCS Express Nationwide Cash on Delivery (COD)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ==================== MODALS ==================== -->
+
+  <!-- 1. ADD / EDIT PRODUCT MODAL -->
+  <div class="admin-modal-overlay" id="productModalOverlay" onclick="closeProductModal(event)">
+    <div class="admin-modal-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <h3 id="productModalTitle">Add New Suit to Catalog</h3>
+        <button class="close-modal-btn" onclick="closeProductModal()">&times;</button>
+      </div>
+
+      <form id="productForm" onsubmit="handleSaveProduct(event)">
+        <div class="form-grid-2">
+          <div class="form-field full-width">
+            <label>Product Title *</label>
+            <input type="text" id="formProdTitle" placeholder="e.g. 3 Piece Embroidered Lawn Suit" required>
+          </div>
+
+          <div class="form-field">
+            <label>Category *</label>
+            <select id="formProdCategory" required>
+              <option value="unstitched">Unstitched</option>
+              <option value="pret">Pret Ready-to-Wear</option>
+              <option value="luxury">Luxury Formals</option>
+              <option value="men">Men's Collection</option>
+              <option value="accessories">Accessories & Shawls</option>
+              <option value="boutique">Boutique Couture</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label>Collection Name</label>
+            <input type="text" id="formProdCollection" placeholder="e.g. Summer Lawn '26">
+          </div>
+
+          <div class="form-field">
+            <label>Fabric Detail</label>
+            <input type="text" id="formProdFabric" placeholder="e.g. Pure Voile & Printed Lawn">
+          </div>
+
+          <div class="form-field">
+            <label>Pieces Count</label>
+            <input type="text" id="formProdPieces" placeholder="e.g. 3 Piece">
+          </div>
+
+          <div class="form-field">
+            <label>Selling Price (PKR) *</label>
+            <input type="number" id="formProdPrice" placeholder="e.g. 4990" required min="100">
+          </div>
+
+          <div class="form-field">
+            <label>Original / Strikethrough Price</label>
+            <input type="number" id="formProdOriginalPrice" placeholder="e.g. 7690">
+          </div>
+
+          <div class="form-field">
+            <label>Discount Badge</label>
+            <input type="text" id="formProdDiscount" placeholder="e.g. SAVE 35%">
+          </div>
+
+          <div class="form-field">
+            <label>Stock Quantity</label>
+            <input type="number" id="formProdStock" value="50" min="0">
+          </div>
+
+          <div class="form-field full-width">
+            <label>Primary Image URL / Path *</label>
+            <input type="text" id="formProdPrimaryImg" placeholder="assets/images/..." required>
+          </div>
+
+          <div class="form-field full-width">
+            <label>Secondary Image URL (Back / Detail View)</label>
+            <input type="text" id="formProdSecondaryImg" placeholder="assets/images/...">
+          </div>
+
+          <div class="form-field full-width">
+            <label>Description</label>
+            <textarea id="formProdDesc" rows="3" placeholder="Describe the suit, embroidery work, and styling recommendations..."></textarea>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeProductModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveProdSubmitBtn">Save to MySQL Database</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. ORDER DETAILS MODAL -->
+  <div class="admin-modal-overlay" id="orderModalOverlay" onclick="closeOrderModal(event)">
+    <div class="admin-modal-dialog" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalOrderId">Order Details</h3>
+          <span id="modalOrderDate" style="font-size: 0.78rem; color: #737373;"></span>
+        </div>
+        <button class="close-modal-btn" onclick="closeOrderModal()">&times;</button>
+      </div>
+
+      <div class="order-modal-body" id="modalOrderBody">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <div class="modal-footer" id="modalOrderFooter">
+        <!-- WhatsApp and status actions -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="admin-toast-container" id="adminToastContainer"></div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

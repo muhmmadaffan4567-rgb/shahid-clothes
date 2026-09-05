@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Shahid Clothes | Official Online Luxury Clothing Brand in Pakistan</title>
+  <meta name="description" content="Shop luxury Pakistani ladies suits, 3-piece unstitched lawn, ready-to-wear pret, luxury festive formals, and boutique collections at Shahid Clothes Linen.">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+
+  <!-- Google Fonts: Instrument Sans, Cinzel & Nunito (Official luxury typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema.org JSON-LD for Google Search Console & Official Brand Indexing -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ClothingStore",
+    "name": "Shahid Clothes",
+    "alternateName": "Shahid Clothes Pakistan",
+    "url": "https://kentucky-newest-bend-ratios.trycloudflare.com",
+    "logo": "https://kentucky-newest-bend-ratios.trycloudflare.com/assets/images/shahid_clothes_logo.png",
+    "image": "https://kentucky-newest-bend-ratios.trycloudflare.com/assets/images/shahid_clothes_logo.png",
+    "description": "Shahid Clothes official luxury Pakistani fashion boutique. Buy 3-piece unstitched lawn, ready-to-wear pret, luxury festive formals, and raw silk suits with Cash on Delivery nationwide.",
+    "telephone": "+923032431518",
+    "email": "shahid3460817@gmail.com",
+    "priceRange": "PKR 2,400 - 35,000",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lahore",
+      "addressRegion": "Punjab",
+      "addressCountry": "PK"
+    },
+    "paymentAccepted": "Cash on Delivery, Visa, Mastercard, Baadmay",
+    "currenciesAccepted": "PKR, USD, GBP, AED"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==================== 1. TOP ANNOUNCEMENT BAR ==================== -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="announcement-container">
+      <div class="announcement-ticker">
+        <span class="ticker-item active"><i class="fa-solid fa-truck-fast"></i> FREE NATIONWIDE DELIVERY ON ORDERS ABOVE RS. 2,500</span>
+        <span class="ticker-item"><i class="fa-solid fa-money-bill-wave"></i> CASH ON DELIVERY (COD) AVAILABLE ALL OVER PAKISTAN</span>
+        <span class="ticker-item"><i class="fa-solid fa-sparkles"></i> NEW SHAHID CLOTHES '26 LUXURY COLLECTION NOW LIVE</span>
+      </div>
+      <div class="announcement-actions">
+        <a href="#track-order" onclick="openTrackModal(event)"><i class="fa-solid fa-map-location-dot"></i> Track Order</a>
+        <span class="separator">|</span>
+        <a href="https://wa.me/923032431518?text=Assalam-o-Alaikum%20Shahid%20Clothes%2C%20I%20need%20help%20with%20my%20order" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Help
+        </a>
+        <span class="separator">|</span>
+        <div class="currency-selector">
+          <label for="currencySelect" class="sr-only">Currency</label>
+          <select id="currencySelect" onchange="changeCurrency(this.value)">
+            <option value="PKR" selected>PKR (Rs.)</option>
+            <option value="USD">USD ($)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="AED">AED (د.إ)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. MAIN SHAHID CLOTHES HEADER ==================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <!-- Mobile Menu Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Brand Logo: Official Shahid Clothes Monogram & Wordmark -->
+      <div class="site-logo">
+        <a href="#home" onclick="showHomePage(event)" class="brand-logo-link" aria-label="Shahid Clothes - Wear Your Story">
+          <img src="assets/images/shahid_clothes_logo.png" alt="Shahid Clothes - Wear Your Story" class="site-main-logo">
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Menu (Exact items from Screenshot 4) -->
+      <nav class="main-navigation" id="mainNavigation" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#sale" class="nav-link sale-gold-link" onclick="openCategoryPage('sale', 'END OF SEASON SALE (UP TO 50% OFF)', event)">
+              END OF SEASON SALE
+            </a>
+          </li>
+
+          <li class="nav-item has-dropdown">
+            <a href="#women" class="nav-link" onclick="openCategoryPage('women', 'WOMEN COLLECTION (UNSTITCHED & READY TO WEAR)', event)">
+              WOMEN <i class="fa-solid fa-angle-down"></i>
+            </a>
+            <div class="mega-dropdown">
+              <div class="dropdown-column">
+                <h4 class="dropdown-title">UNSTITCHED</h4>
+                <a href="#" onclick="openCategoryPage('unstitched', '3-Piece Lawn Collection', event); filterByPiece('3-Piece');">3-Piece Lawn Suits</a>
+                <a href="#" onclick="openCategoryPage('unstitched', '2-Piece Printed Suits', event); filterByPiece('2-Piece');">2-Piece Printed Suits</a>
+                <a href="#" onclick="openCategoryPage('unstitched', '1-Piece Shirts', event); filterByPiece('1-Piece');">1-Piece Embroidered</a>
+                <a href="#" onclick="openCategoryPage('unstitched', 'Freedom to Buy Fabrics', event);">Freedom to Buy</a>
+              </div>
+              <div class="dropdown-column">
+                <h4 class="dropdown-title">READY TO WEAR</h4>
+                <a href="#" onclick="openCategoryPage('pret', 'Ready to Wear Kurtas', event);">Embroidered Kurtas</a>
+                <a href="#" onclick="openCategoryPage('pret', '2-Piece Pret Suits', event);">2-Piece Pret</a>
+                <a href="#" onclick="openCategoryPage('pret', '3-Piece Luxury Pret', event);">3-Piece Pret</a>
+              </div>
+              <div class="dropdown-promo">
+                <img src="assets/images/shahid_hania_lawn.jpg" alt="Shahid Summer Lawn">
+                <span>NEW IN: SUMMER LAWN '26</span>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a href="#luxury" class="nav-link" onclick="openCategoryPage('luxury', 'LUXURY & FESTIVE COLLECTION', event)">
+              LUXURY
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#men" class="nav-link" onclick="openCategoryPage('men', 'MEN COLLECTION (NAQSH SUITS & KURTAS)', event)">
+              MEN
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#accessories" class="nav-link" onclick="openCategoryPage('accessories', 'ACCESSORIES (BAGS, SCARVES & FOOTWEAR)', event)">
+              ACCESSORIES
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#new-in" class="nav-link" onclick="openCategoryPage('new-in', 'NEW IN COLLECTION \'26', event)">
+              NEW IN
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#boutique" class="nav-link highlight" onclick="openCategoryPage('boutique', 'SHAHID BOUTIQUE (EXCLUSIVE COUTURE)', event)">
+              BOUTIQUE <span class="nav-badge">HOT</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Icons (User, Search, Cart as in Screenshot 4) -->
+      <div class="header-actions">
+        <!-- Account Icon -->
+        <button class="action-icon-btn" onclick="openTrackModal(event)" aria-label="My Account" title="My Account">
+          <i class="fa-regular fa-user"></i>
+        </button>
+
+        <!-- Search Icon -->
+        <button class="action-icon-btn" id="headerSearchTriggerBtn" onclick="toggleHeaderSearchBar()" aria-label="Search Catalog" title="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Slide-out Cart Button with Black Counter Bubble -->
+        <button class="action-icon-btn cart-btn" onclick="openCartDrawer()" aria-label="Shopping Bag" title="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="action-counter cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Expandable Full-Width Header Search Bar (Screenshots 1 & 2) -->
+    <div class="header-search-bar" id="headerSearchBar" style="display: none;">
+      <div class="header-search-inner">
+        <i class="fa-solid fa-magnifying-glass search-inline-icon"></i>
+        <input type="text" id="headerSearchInput" placeholder="SEARCH FOR..." autocomplete="off" oninput="handleHeaderSearch(this.value)" onkeydown="handleHeaderSearchKey(event)">
+        <button type="button" class="close-search-inline-btn" onclick="closeHeaderSearchBar()" aria-label="Close search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <!-- Direct feedback under input (Screenshot 2) -->
+      <div class="header-search-dropdown" id="headerSearchDropdown" style="display: none;"></div>
+    </div>
+  </header>
+
+  <!-- ==================== 3. MOBILE SLIDE-IN NAV DRAWER ==================== -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-nav-header">
+      <div class="mobile-drawer-brand">
+        <img src="assets/images/shahid_clothes_logo.png" alt="Shahid Clothes - Wear Your Story" class="mobile-nav-logo-img">
+      </div>
+      <button class="close-drawer-btn" onclick="closeMobileNav()" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav-content">
+      <ul class="mobile-nav-links">
+        <li><a href="#sale" class="sale-gold-link" onclick="openCategoryPage('sale', 'END OF SEASON SALE (UP TO 50% OFF)', event); closeMobileNav();">END OF SEASON SALE</a></li>
+        <li><a href="#women" onclick="openCategoryPage('women', 'WOMEN COLLECTION (UNSTITCHED & READY TO WEAR)', event); closeMobileNav();">WOMEN (UNSTITCHED & PRET)</a></li>
+        <li><a href="#luxury" onclick="openCategoryPage('luxury', 'LUXURY & FESTIVE COLLECTION', event); closeMobileNav();">LUXURY</a></li>
+        <li><a href="#men" onclick="openCategoryPage('men', 'MEN COLLECTION (NAQSH SUITS & KURTAS)', event); closeMobileNav();">MEN</a></li>
+        <li><a href="#accessories" onclick="openCategoryPage('accessories', 'ACCESSORIES (BAGS, SCARVES & FOOTWEAR)', event); closeMobileNav();">ACCESSORIES</a></li>
+        <li><a href="#new-in" onclick="openCategoryPage('new-in', 'NEW IN COLLECTION \'26', event); closeMobileNav();">NEW IN</a></li>
+        <li><a href="#boutique" onclick="openCategoryPage('boutique', 'SHAHID BOUTIQUE (EXCLUSIVE COUTURE)', event); closeMobileNav();">BOUTIQUE</a></li>
+      </ul>
+      <div class="mobile-nav-extra">
+        <a href="#track-order" onclick="openTrackModal(event); closeMobileNav();"><i class="fa-solid fa-truck"></i> Track Your Order</a>
+        <a href="https://wa.me/923001234567" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp Helpline</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==================== 4. MAIN APPLICATION CONTAINER (ROUTED VIEWS) ==================== -->
+  <main id="mainApp">
+    
+    <!-- VIEW A: HOME PAGE VIEW -->
+    <div id="homeView">
+      
+      <!-- HERO CAROUSEL BANNER SECTION (DARK EDITORIAL - SCREENSHOT 3) -->
+      <section class="hero-carousel-section" id="heroCarousel">
+        <div class="carousel-slider" id="carouselSlider">
+          <!-- Slide 1: Hania Aamir Shahid Clothes Luxury Festive -->
+          <div class="carousel-slide active" style="background-image: url('assets/images/hero_hania_banner.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <span class="slide-tag">SHAHID COUTURE FESTIVE '26</span>
+              <h1 class="slide-heading">FEATURING HANIA AAMIR</h1>
+              <p class="slide-subtext">Signature Raw Silk Embroidered 3-Piece Festive Formals Crafted with Antique Zari & Tilla Work.</p>
+              <div class="slide-buttons">
+                <a href="#boutique" class="btn btn-maroon" onclick="openCategoryPage('boutique', 'SHAHID BOUTIQUE', event)">SHOP FESTIVE EDIT</a>
+                <a href="#all" class="btn btn-outline" onclick="openCategoryPage('all', 'ALL COLLECTIONS', event)">EXPLORE ALL</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Summer Luxury Lawn -->
+          <div class="carousel-slide" style="background-image: url('assets/images/hero_lawn.jpg');">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <span class="slide-tag">SUMMER LAWN VOL. 1</span>
+              <h2 class="slide-heading">BLOOM & BREEZE LAWN</h2>
+              <p class="slide-subtext">Pure Breathable Pakistani Lawn With Digital Printed Chiffon Dupattas & Handcrafted Details.</p>
+              <div class="slide-buttons">
+                <a href="#unstitched" class="btn btn-maroon" onclick="openCategoryPage('unstitched', 'UNSTITCHED LAWN', event)">SHOP 3-PIECE LAWN</a>
+                <a href="#all" class="btn btn-outline" onclick="openCategoryPage('unstitched', 'VIEW UNSTITCHED', event)">VIEW UNSTITCHED</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control prev" onclick="prevSlide()" aria-label="Previous Slide"><i class="fa-solid fa-angle-left"></i></button>
+        <button class="carousel-control next" onclick="nextSlide()" aria-label="Next Slide"><i class="fa-solid fa-angle-right"></i></button>
+        
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <span class="dot active" onclick="goToSlide(0)"></span>
+          <span class="dot" onclick="goToSlide(1)"></span>
+        </div>
+      </section>
+
+      <!-- CIRCLE APP HIGHLIGHTS (EXACT 5 CIRCLES FROM USER UPLOADED IMAGE) -->
+      <section class="stories-section">
+        <div class="section-container">
+          <div class="stories-scroller">
+            <div class="story-item" onclick="openCategoryPage('unstitched', 'UNSTITCHED 3-PIECE & 2-PIECE LAWN', event)">
+              <div class="story-ring active">
+                <img src="assets/images/cat_unstitched.jpg" alt="Unstitched">
+              </div>
+              <span class="story-label">Unstitched</span>
+            </div>
+            <div class="story-item" onclick="openCategoryPage('pret', 'READY TO WEAR (PRET WEAR)', event)">
+              <div class="story-ring active">
+                <img src="assets/images/cat_pret.jpg" alt="Pret Wear">
+              </div>
+              <span class="story-label">Pret Wear</span>
+            </div>
+            <div class="story-item" onclick="openCategoryPage('boutique', 'SHAHID BOUTIQUE (EXCLUSIVE COUTURE)', event)">
+              <div class="story-ring active">
+                <img src="assets/images/cat_luxury.jpg" alt="Boutique">
+              </div>
+              <span class="story-label">Boutique</span>
+            </div>
+            <div class="story-item" onclick="openCategoryPage('shawls', 'ROYAL WINTER SHAWLS', event)">
+              <div class="story-ring active">
+                <img src="assets/images/cat_shawls.jpg" alt="Shawls">
+              </div>
+              <span class="story-label">Shawls</span>
+            </div>
+            <div class="story-item" onclick="openCategoryPage('sale-35', 'FLAT 35% OFF SALE', event)">
+              <div class="story-ring sale-ring">
+                <img src="assets/images/shahid_hania_festive.jpg" alt="Flat 35% Off">
+              </div>
+              <span class="story-label sale-label">Flat 35% Off</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1. SALE BY PERCENTAGE (SIGNATURE HOME SECTION) -->
+      <section class="sale-percentage-section">
+        <div class="section-container">
+          <div class="section-title-bar">
+            <h2 class="section-heading">SALE BY <span>PERCENTAGE</span></h2>
+            <p class="section-subheading">Shop verified seasonal markdowns across all categories</p>
+          </div>
+          <div class="sale-percentage-grid">
+            <div class="sale-percent-card" onclick="openCategoryPage('sale-50', 'FLAT 60% OFF COLLECTION', event)">
+              <img src="assets/images/hero_festive.jpg" alt="Flat 60% Off">
+              <div class="sale-card-tag">FLAT 60% OFF</div>
+            </div>
+            <div class="sale-percent-card" onclick="openCategoryPage('sale-50', 'FLAT 50% OFF COLLECTION', event)">
+              <img src="assets/images/hero_lawn.jpg" alt="Flat 50% Off">
+              <div class="sale-card-tag">FLAT 50% OFF</div>
+            </div>
+            <div class="sale-percent-card" onclick="openCategoryPage('sale-35', 'FLAT 40% OFF COLLECTION', event)">
+              <img src="assets/images/shahid_hania_lawn.jpg" alt="Flat 40% Off">
+              <div class="sale-card-tag">FLAT 40% OFF</div>
+            </div>
+            <div class="sale-percent-card" onclick="openCategoryPage('sale-35', 'FLAT 35% OFF COLLECTION', event)">
+              <img src="assets/images/shahid_hania_festive.jpg" alt="Flat 35% Off">
+              <div class="sale-card-tag highlight">FLAT 35% OFF</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ELEGANCE REDEFINED FOR HIM & HER (CATEGORY TILES) -->
+      <section class="campaign-tiles-section">
+        <div class="section-container">
+          <div class="section-title-bar">
+            <h2 class="section-heading">ELEGANCE REDEFINED <span>FOR HIM & HER</span></h2>
+            <p class="section-subheading">Curated festive edits and essential seasonal coordinates</p>
+          </div>
+          <div class="tiles-grid-4">
+            <div class="campaign-tile" onclick="openCategoryPage('women', 'WOMEN UNSTITCHED & READY TO WEAR', event)">
+              <img src="assets/images/cat_unstitched.jpg" alt="Women Unstitched & Pret">
+              <div class="tile-caption">
+                <span class="tile-tag">WOMEN</span>
+                <h3 class="tile-title">UNSTITCHED & PRET</h3>
+                <span class="tile-btn">EXPLORE WOMEN <i class="fa-solid fa-arrow-right-long"></i></span>
+              </div>
+            </div>
+            <div class="campaign-tile" onclick="openCategoryPage('luxury', 'SHAHID BOUTIQUE & LUXURY FORMALS', event)">
+              <img src="assets/images/cat_luxury.jpg" alt="Shahid Boutique & Luxury">
+              <div class="tile-caption">
+                <span class="tile-tag">LUXURY</span>
+                <h3 class="tile-title">SHAHID BOUTIQUE</h3>
+                <span class="tile-btn">SHOP BOUTIQUE <i class="fa-solid fa-arrow-right-long"></i></span>
+              </div>
+            </div>
+            <div class="campaign-tile" onclick="openCategoryPage('men', 'MEN NAQSH COLLECTION', event)">
+              <img src="assets/images/cat_pret.jpg" alt="Men Naqsh Collection">
+              <div class="tile-caption">
+                <span class="tile-tag">MEN</span>
+                <h3 class="tile-title">NAQSH SUITS</h3>
+                <span class="tile-btn">SHOP MEN <i class="fa-solid fa-arrow-right-long"></i></span>
+              </div>
+            </div>
+            <div class="campaign-tile" onclick="openCategoryPage('shawls', 'WINTER SHAWLS & WRAPS', event)">
+              <img src="assets/images/cat_shawls.jpg" alt="Winter Shawls">
+              <div class="tile-caption">
+                <span class="tile-tag">WRAPS</span>
+                <h3 class="tile-title">VELVET SHAWLS</h3>
+                <span class="tile-btn">SHOP SHAWLS <i class="fa-solid fa-arrow-right-long"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ACCESSORIES EDIT (SCARVES, BAGS & FOOTWEAR BOXES) -->
+      <section class="accessories-boxes-section">
+        <div class="section-container">
+          <div class="section-title-bar">
+            <h2 class="section-heading">ACCESSORIES <span>& FOOTWEAR</span></h2>
+            <p class="section-subheading">Elevate your attire with Shahid Clothes silk scarves, luxury handbags, and festive heels</p>
+          </div>
+          <div class="accessories-grid">
+            <div class="accessory-card" onclick="openCategoryPage('accessories', 'WOMEN SCARVES & STOLES', event)">
+              <img src="assets/images/shahid_kinza_luxury.jpg" alt="Silk Scarves">
+              <div class="accessory-overlay">
+                <h4>WOMEN SCARVES</h4>
+                <span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+            <div class="accessory-card" onclick="openCategoryPage('accessories', 'HANDBAGS & CLUTCHES', event)">
+              <img src="assets/images/cat_luxury.jpg" alt="Handbags">
+              <div class="accessory-overlay">
+                <h4>HANDBAGS & CLUTCHES</h4>
+                <span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+            <div class="accessory-card" onclick="openCategoryPage('accessories', 'FOOTWEAR & HEELS', event)">
+              <img src="assets/images/cat_pret.jpg" alt="Footwear">
+              <div class="accessory-overlay">
+                <h4>FOOTWEAR & HEELS</h4>
+                <span>SHOP NOW <i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. HOME TRENDING PRODUCTS GRID -->
+      <section class="shop-section" id="shop-grid">
+        <div class="section-container">
+          <div class="shop-header">
+            <div class="shop-title-wrap">
+              <h2 class="section-heading" id="catalogHeading">ALL COLLECTIONS</h2>
+              <p class="section-subheading">Authentic Shahid Clothes Mill-Crafted Apparel • Cash On Delivery Available Nationwide</p>
+            </div>
+            <div class="shop-stats">
+              <span id="productCounter">Showing All Products</span>
+            </div>
+          </div>
+
+          <!-- Filter Toolbar Pills -->
+          <div class="shop-toolbar">
+            <div class="category-pills">
+              <button class="pill active" onclick="openCategoryPage('all', 'ALL COLLECTIONS', event)">All Items</button>
+              <button class="pill" onclick="openCategoryPage('women', 'WOMEN COLLECTION', event)">Women</button>
+              <button class="pill" onclick="openCategoryPage('luxury', 'LUXURY & FESTIVE', event)">Luxury</button>
+              <button class="pill" onclick="openCategoryPage('men', 'MEN COLLECTION', event)">Men</button>
+              <button class="pill" onclick="openCategoryPage('accessories', 'ACCESSORIES', event)">Accessories</button>
+              <button class="pill" onclick="openCategoryPage('new-in', 'NEW IN COLLECTION', event)">New In</button>
+              <button class="pill" onclick="openCategoryPage('boutique', 'SHAHID BOUTIQUE', event)">Boutique</button>
+              <button class="pill sale-pill" onclick="openCategoryPage('sale', 'END OF SEASON SALE', event)"><i class="fa-solid fa-tag"></i> Sale Up to 50%</button>
+            </div>
+
+            <div class="toolbar-actions">
+              <div class="filter-dropdown">
+                <select id="fabricSelect" onchange="filterByFabric(this.value, event)">
+                  <option value="all">All Fabrics</option>
+                  <option value="Lawn">Lawn</option>
+                  <option value="Raw Silk">Raw Silk</option>
+                  <option value="Chiffon">Chiffon</option>
+                  <option value="Velvet">Velvet</option>
+                </select>
+              </div>
+              <div class="sort-dropdown">
+                <select id="sortSelect" onchange="sortProducts(this.value)">
+                  <option value="featured">Featured</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="discount">Highest Discount</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Grid (Studio light gray card + Plus button) -->
+          <div class="products-grid" id="productsGrid">
+            <!-- Dynamic Injection -->
+          </div>
+        </div>
+      </section>
+
+      <!-- BRAND PERKS -->
+      <section class="brand-perks-section">
+        <div class="section-container">
+          <div class="perks-grid">
+            <div class="perk-card">
+              <div class="perk-icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <div class="perk-info">
+                <h4>Nationwide Free Shipping</h4>
+                <p>Free delivery on orders above Rs. 2,500 via TCS & CallCourier across Pakistan.</p>
+              </div>
+            </div>
+            <div class="perk-card">
+              <div class="perk-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+              <div class="perk-info">
+                <h4>Cash on Delivery (COD)</h4>
+                <p>Pay cash directly to the rider at your doorstep safely.</p>
+              </div>
+            </div>
+            <div class="perk-card">
+              <div class="perk-icon"><i class="fa-solid fa-certificate"></i></div>
+              <div class="perk-info">
+                <h4>100% Original Fabric</h4>
+                <p>Guaranteed genuine Shahid Clothes fabric, authentic dyes & embroidery.</p>
+              </div>
+            </div>
+            <div class="perk-card">
+              <div class="perk-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="perk-info">
+                <h4>Direct WhatsApp Orders</h4>
+                <p>Order in 30 seconds via WhatsApp with instant customer support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSTAGRAM LOOKBOOK FEED -->
+      <section class="lookbook-section">
+        <div class="section-container">
+          <div class="section-header-center">
+            <span class="badge-tag">#ShahidClothes</span>
+            <h2 class="section-heading">TAG US ON INSTAGRAM</h2>
+            <p class="section-subheading">Follow @ShahidClothes for daily lookbooks, styling tips & celebrity appearances</p>
+          </div>
+          <div class="lookbook-grid">
+            <div class="lookbook-item"><img src="assets/images/shahid_hania_festive.jpg" alt="Hania Aamir Look"></div>
+            <div class="lookbook-item"><img src="assets/images/shahid_aima_black.jpg" alt="Boutique Look"></div>
+            <div class="lookbook-item"><img src="assets/images/shahid_hania_lawn.jpg" alt="Lawn Look"></div>
+            <div class="lookbook-item"><img src="assets/images/shahid_yumna_lawn.jpg" alt="Pret Look"></div>
+            <div class="lookbook-item"><img src="assets/images/cat_shawls.jpg" alt="Festive Look"></div>
+            <div class="lookbook-item"><img src="assets/images/shahid_sajal_pret.jpg" alt="Sajal Aly Look"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEWSLETTER -->
+      <section class="newsletter-section">
+        <div class="section-container">
+          <div class="newsletter-card">
+            <span class="newsletter-tag">EXCLUSIVE VIP OFFER</span>
+            <h3 class="newsletter-heading">GET RS. 500 OFF YOUR FIRST ORDER</h3>
+            <p class="newsletter-desc">Subscribe to receive private sale invitations, new lawn catalog alerts, and celebrity campaign previews.</p>
+            <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+              <input type="email" id="newsletterEmail" placeholder="Enter your email address..." required>
+              <button type="submit" class="btn btn-primary">SUBSCRIBE & GET CODE</button>
+            </form>
+            <div class="newsletter-success" id="newsletterSuccess" style="display: none;">
+              <i class="fa-solid fa-circle-check"></i> Coupon Generated: <strong>WELCOME500</strong> (Use at Cash on Delivery checkout!)
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- VIEW B: DEDICATED PRODUCT DETAIL PAGE (EXACT SCREENSHOT 5 REPLICA) -->
+    <div id="productDetailView" style="display: none;">
+      <div class="section-container product-detail-container">
+        <!-- Breadcrumb & Back Link -->
+        <div class="detail-breadcrumb">
+          <button class="back-link-btn" onclick="goBackToPreviousView()"><i class="fa-solid fa-arrow-left"></i> BACK TO CATALOG</button>
+          <span class="breadcrumb-trail" id="detailBreadcrumbTrail">Home / Women / Product</span>
+        </div>
+
+        <!-- Two-Column Product Layout -->
+        <div class="product-pdp-layout">
+          <!-- Left Column: Gallery Images (Screenshot 5) -->
+          <div class="pdp-gallery-col" id="pdpGalleryCol">
+            <div class="pdp-img-frame">
+              <img src="assets/images/shahid_hania_festive.jpg" alt="Product Full View" id="pdpMainImg" onerror="this.onerror=null;this.src='assets/images/cat_luxury.jpg';">
+            </div>
+            <div class="pdp-img-frame">
+              <img src="assets/images/shahid_hania_lawn.jpg" alt="Product Detail Close-up" id="pdpSecondaryImg" onerror="this.onerror=null;this.src='assets/images/cat_pret.jpg';">
+            </div>
+          </div>
+
+          <!-- Right Column: Product Purchasing Info (Screenshot 5) -->
+          <div class="pdp-info-col">
+            <h1 class="pdp-title" id="pdpTitle">2 PIECE - PRINTED SUIT - 42602216</h1>
+            
+            <div class="pdp-pricing-row">
+              <span class="pdp-price-current" id="pdpPriceCurrent">RS. 2,463.50</span>
+              <span class="pdp-price-original" id="pdpPriceOriginal">RS. 3,790.00</span>
+            </div>
+
+            <!-- Baadmay Installment Badge (Exact from Screenshot 5) -->
+            <div class="baadmay-banner">
+              <span class="baadmay-badge">baadmay</span>
+              <span class="baadmay-text">Pay in 3 Installments of <strong id="baadmayInstallment">Rs. 821</strong></span>
+            </div>
+
+            <!-- Red Discount Tag (Screenshot 5) -->
+            <div class="pdp-badge-wrap">
+              <span class="pdp-red-badge" id="pdpDiscountBadge">SAVE 35%</span>
+            </div>
+
+            <!-- SKU (Screenshot 5) -->
+            <div class="pdp-sku-line" id="pdpSkuLine">SKU: 001866622108</div>
+
+            <!-- Size Selector -->
+            <div class="pdp-size-section">
+              <label>Select Size / Stitching Option:</label>
+              <div class="pdp-size-options" id="pdpSizeOptions">
+                <!-- Injected dynamically -->
+              </div>
+            </div>
+
+            <!-- Quantity Stepper ([-] 1 [+] from Screenshot 5) -->
+            <div class="pdp-quantity-stepper">
+              <button class="pdp-qty-btn" onclick="changePdpQty(-1)">-</button>
+              <span class="pdp-qty-val" id="pdpQtyVal">1</span>
+              <button class="pdp-qty-btn" onclick="changePdpQty(1)">+</button>
+            </div>
+
+            <!-- Primary Action Buttons (Screenshot 5) -->
+            <div class="pdp-actions-group">
+              <!-- ADD TO CART button (white with border) -->
+              <button class="btn btn-pdp-add" onclick="addPdpToCart()">ADD TO CART</button>
+              
+              <!-- BUY IT NOW button (solid black - opens COD checkout) -->
+              <button class="btn btn-pdp-buy" onclick="buyPdpNow()">BUY IT NOW</button>
+
+              <!-- Instant WhatsApp Order Button -->
+              <button class="btn btn-whatsapp btn-block" onclick="orderPdpViaWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i> Order via WhatsApp (Cash on Delivery)
+              </button>
+            </div>
+
+            <!-- Product Description & Accordion Specs -->
+            <div class="pdp-details-accordion">
+              <div class="accordion-item active">
+                <h4 class="accordion-title"><i class="fa-solid fa-scroll"></i> Fabric & Product Details</h4>
+                <div class="accordion-content">
+                  <p id="pdpDescription" style="margin-bottom: 8px;">Pure Shahid Clothes fabric crafted with finest craftsmanship.</p>
+                  <ul id="pdpFabricSpecsList" class="pdp-specs-list">
+                    <!-- Dynamic list -->
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h4 class="accordion-title"><i class="fa-solid fa-truck-fast"></i> Nationwide Delivery & COD</h4>
+                <div class="accordion-content">
+                  <p>Standard delivery in 2 to 4 working days across all major Pakistani cities. Cash on Delivery (COD) accepted at your doorstep.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW C: DEDICATED SEARCH PAGE VIEW (EXACT SCREENSHOT 3) -->
+    <div id="searchPageView" style="display: none;">
+      <div class="search-page-container">
+        <h1 class="search-page-heading">SEARCH</h1>
+        <p class="search-page-status" id="searchPageStatus">No results could be found. Please try again with a different query.</p>
+        
+        <div class="search-page-input-box">
+          <input type="text" id="searchPageInput" placeholder="Search for..." oninput="handleSearchPageInput(this.value)" onkeydown="handleSearchPageKey(event)">
+          <button type="button" class="search-page-submit-btn" onclick="executeSearchPageSubmit()" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- Instant Dynamic Products Grid (Shows results immediately when valid item is typed!) -->
+        <div class="products-grid search-results-grid" id="searchPageGrid"></div>
+      </div>
+    </div>
+
+    <!-- VIEW D: OFFICIAL SHAHID CLOTHES CHECKOUT PAGE VIEW -->
+    <div id="checkoutPageView" style="display: none;">
+      <!-- Mobile Order Summary Accordion Bar (Exact Shopify Mobile Feature) -->
+      <div class="checkout-mobile-summary-toggle" onclick="toggleMobileCheckoutSummary()">
+        <div class="mobile-toggle-left">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span id="mobileToggleText">Show order summary <i class="fa-solid fa-angle-down"></i></span>
+        </div>
+        <div class="mobile-toggle-total" id="mobileCheckoutTotal">Rs. 0</div>
+      </div>
+
+      <div class="checkout-page-layout">
+        <!-- LEFT COLUMN: Contact, Delivery, Shipping, Payment -->
+        <div class="checkout-main-column">
+          <!-- Checkout Brand Logo Header -->
+          <div class="checkout-page-brand">
+            <a href="#home" onclick="showHomePage(event)" aria-label="Shahid Clothes - Wear Your Story">
+              <img src="assets/images/shahid_clothes_logo.png" alt="Shahid Clothes - Wear Your Story" class="checkout-brand-logo-img">
+            </a>
+            <div class="checkout-breadcrumb-nav">
+              <a href="#" onclick="showHomePage(event)">Cart</a>
+              <span class="crumb-sep">&gt;</span>
+              <span class="crumb-active">Information</span>
+              <span class="crumb-sep">&gt;</span>
+              <span>Shipping</span>
+              <span class="crumb-sep">&gt;</span>
+              <span>Payment</span>
+            </div>
+          </div>
+
+          <form id="shopifyCheckoutForm" onsubmit="handlePlaceShopifyOrder(event)">
+            <!-- 1. Contact Section -->
+            <div class="checkout-step-section">
+              <div class="checkout-step-header">
+                <h3>Contact</h3>
+                <span class="login-prompt">Already have an account? <a href="#" onclick="openTrackModal(event); return false;">Log in</a></span>
+              </div>
+              <div class="field-group">
+                <input type="text" id="chkContact" placeholder="Email or mobile phone number (03032431518...)" required autocomplete="email">
+              </div>
+              <label class="checkout-checkbox-label">
+                <input type="checkbox" checked id="chkNewsOffers">
+                <span>Email me with news, seasonal lawn arrivals and exclusive offers</span>
+              </label>
+            </div>
+
+            <!-- 2. Delivery Address Section -->
+            <div class="checkout-step-section">
+              <div class="checkout-step-header">
+                <h3>Delivery</h3>
+              </div>
+
+              <!-- Country Dropdown -->
+              <div class="field-group">
+                <label class="field-floating-label" for="chkCountry">Country/Region</label>
+                <select id="chkCountry" class="field-select">
+                  <option value="Pakistan" selected>Pakistan</option>
+                </select>
+              </div>
+
+              <!-- First & Last Name -->
+              <div class="field-row-2">
+                <div class="field-group">
+                  <input type="text" id="chkFirstName" placeholder="First name (optional)" autocomplete="given-name">
+                </div>
+                <div class="field-group">
+                  <input type="text" id="chkLastName" placeholder="Last name *" required autocomplete="family-name">
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="field-group">
+                <input type="text" id="chkAddress" placeholder="Address (House #, Street name, Block) *" required autocomplete="street-address">
+              </div>
+
+              <!-- Apartment, Suite, etc. -->
+              <div class="field-group">
+                <input type="text" id="chkApartment" placeholder="Apartment, suite, unit, etc. (optional)">
+              </div>
+
+              <!-- City & Postal Code -->
+              <div class="field-row-2">
+                <div class="field-group">
+                  <select id="chkCity" class="field-select" required onchange="handleCheckoutCityChange(this.value)">
+                    <option value="" disabled selected>City *</option>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Islamabad">Islamabad</option>
+                    <option value="Rawalpindi">Rawalpindi</option>
+                    <option value="Faisalabad">Faisalabad</option>
+                    <option value="Multan">Multan</option>
+                    <option value="Peshawar">Peshawar</option>
+                    <option value="Quetta">Quetta</option>
+                    <option value="Sialkot">Sialkot</option>
+                    <option value="Gujranwala">Gujranwala</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bahawalpur">Bahawalpur</option>
+                    <option value="Sargodha">Sargodha</option>
+                    <option value="Abbottabad">Abbottabad</option>
+                    <option value="Wah Cantt">Wah Cantt</option>
+                    <option value="Rahim Yar Khan">Rahim Yar Khan</option>
+                    <option value="Sheikhupura">Sheikhupura</option>
+                    <option value="Other City">Other City in Pakistan</option>
+                  </select>
+                </div>
+                <div class="field-group">
+                  <input type="text" id="chkPostalCode" placeholder="Postal code (optional)" autocomplete="postal-code">
+                </div>
+              </div>
+
+              <!-- Phone with tooltip -->
+              <div class="field-group phone-field-wrap">
+                <input type="tel" id="chkPhone" placeholder="Phone (03032431518) *" required autocomplete="tel">
+                <span class="phone-tooltip" title="In case we need to contact you about your order"><i class="fa-regular fa-circle-question"></i></span>
+              </div>
+
+              <label class="checkout-checkbox-label">
+                <input type="checkbox" checked id="chkSaveInfo">
+                <span>Save this information for next time</span>
+              </label>
+            </div>
+
+            <!-- 3. Shipping Method -->
+            <div class="checkout-step-section">
+              <div class="checkout-step-header">
+                <h3>Shipping method</h3>
+              </div>
+              <div class="shipping-method-box">
+                <div class="shipping-method-left">
+                  <span class="shipping-dot"></span>
+                  <div>
+                    <strong>Standard Delivery (Nationwide TCS / CallCourier)</strong>
+                    <p class="shipping-subtext">2 to 4 business days</p>
+                  </div>
+                </div>
+                <span class="shipping-price-val" id="chkShippingRate">FREE</span>
+              </div>
+            </div>
+
+            <!-- 4. Payment Section -->
+            <div class="checkout-step-section">
+              <div class="checkout-step-header">
+                <h3>Payment</h3>
+                <p class="checkout-sub-caption">All transactions are secure and encrypted.</p>
+              </div>
+
+              <div class="payment-methods-accordion">
+                <!-- Option 1: Cash on Delivery (COD) -->
+                <div class="payment-accordion-item active" id="payMethodCod">
+                  <label class="payment-item-header" onclick="selectCheckoutPayment('cod')">
+                    <div class="payment-radio-wrap">
+                      <input type="radio" name="chkPayment" value="COD" checked>
+                      <strong>Cash on Delivery (COD)</strong>
+                    </div>
+                    <span class="payment-badge-cod">Pay Rider</span>
+                  </label>
+                  <div class="payment-item-content" id="payContentCod">
+                    <div class="cod-instruction-box">
+                      <i class="fa-solid fa-money-bill-wave"></i>
+                      <p>Pay cash to the courier rider upon receiving your package at your doorstep anywhere in Pakistan.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Option 2: Credit / Debit Card -->
+                <div class="payment-accordion-item" id="payMethodCard">
+                  <label class="payment-item-header" onclick="selectCheckoutPayment('card')">
+                    <div class="payment-radio-wrap">
+                      <input type="radio" name="chkPayment" value="CARD">
+                      <strong>Credit / Debit Card</strong>
+                    </div>
+                    <div class="payment-card-logos">
+                      <span class="pay-logo visa-logo">VISA</span>
+                      <span class="pay-logo mc-logo"><span class="mc-circle-red"></span><span class="mc-circle-yellow"></span></span>
+                    </div>
+                  </label>
+                  <div class="payment-item-content" id="payContentCard" style="display: none;">
+                    <div class="card-inputs-grid">
+                      <div class="field-group full-width">
+                        <input type="text" id="chkCardNumber" placeholder="Card number (16 digits)" maxlength="19">
+                      </div>
+                      <div class="field-group">
+                        <input type="text" id="chkCardExpiry" placeholder="Expiration date (MM / YY)" maxlength="5">
+                      </div>
+                      <div class="field-group">
+                        <input type="password" id="chkCardCvv" placeholder="Security code (CVV)" maxlength="4">
+                      </div>
+                      <div class="field-group full-width">
+                        <input type="text" id="chkCardName" placeholder="Name on card">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Option 3: BaadMay (3 Monthly Installments) -->
+                <div class="payment-accordion-item" id="payMethodBaadmay">
+                  <label class="payment-item-header" onclick="selectCheckoutPayment('baadmay')">
+                    <div class="payment-radio-wrap">
+                      <input type="radio" name="chkPayment" value="BAADMAY">
+                      <strong>BaadMay (Pay in 3 Installments)</strong>
+                    </div>
+                    <span class="baadmay-tag">0% Markup</span>
+                  </label>
+                  <div class="payment-item-content" id="payContentBaadmay" style="display: none;">
+                    <p style="font-size: 0.78rem; color: #555;">Pay 1/3rd today and the rest in 2 monthly installments. Zero interest or hidden fees.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Complete Order Button -->
+            <div class="checkout-submit-area">
+              <button type="submit" class="shopify-complete-btn" id="chkSubmitBtn">
+                <span>Complete order</span>
+                <i class="fa-solid fa-lock"></i>
+              </button>
+              <a href="#home" class="return-to-cart-link" onclick="showHomePage(event)">
+                &lt; Return to cart
+              </a>
+            </div>
+
+            <!-- Checkout Footer Policies Links -->
+            <div class="checkout-footer-links">
+              <a href="#refund-policy" onclick="openInfoModal('returns'); return false;">Refund policy</a>
+              <a href="#shipping-policy" onclick="openInfoModal('terms'); return false;">Shipping policy</a>
+              <a href="#privacy-policy" onclick="openInfoModal('privacy'); return false;">Privacy policy</a>
+              <a href="#terms-of-service" onclick="openInfoModal('terms'); return false;">Terms of service</a>
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT COLUMN: Order Summary Sidebar -->
+        <aside class="checkout-summary-sidebar" id="checkoutSummarySidebar">
+          <!-- Items List Container -->
+          <div class="checkout-items-list" id="chkItemsList">
+            <!-- Dynamically populated with thumbnails, quantity bubble, title, specs, price -->
+          </div>
+
+          <!-- Promo Code Input -->
+          <div class="checkout-promo-wrap">
+            <input type="text" id="chkPromoInput" placeholder="Discount code or gift card" style="text-transform: uppercase;">
+            <button type="button" class="chk-promo-btn" onclick="applyCheckoutPromo()">Apply</button>
+          </div>
+          <div id="chkPromoMessage" class="chk-promo-msg" style="display: none;"></div>
+
+          <!-- Totals Calculation -->
+          <div class="checkout-price-lines">
+            <div class="price-line">
+              <span>Subtotal</span>
+              <strong id="chkSummarySubtotal">Rs. 0</strong>
+            </div>
+            <div class="price-line discount-line" id="chkSummaryDiscountLine" style="display: none;">
+              <span>Discount</span>
+              <strong id="chkSummaryDiscount">- Rs. 0</strong>
+            </div>
+            <div class="price-line">
+              <span>Shipping</span>
+              <span id="chkSummaryShipping">FREE</span>
+            </div>
+            <div class="price-line total-price-line">
+              <div>
+                <span class="total-label">Total</span>
+                <span class="tax-note">Including all taxes</span>
+              </div>
+              <div class="total-amount-wrap">
+                <span class="currency-tag">PKR</span>
+                <strong class="total-grand" id="chkSummaryGrandTotal">Rs. 0</strong>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== 5. SHAHID CLOTHES FOOTER ==================== -->
+  <footer class="site-footer">
+    <!-- Top Perks Row (Screenshot 4: Order Tracking, Store Locator, Support 24/7) -->
+    <div class="footer-perks-bar">
+      <div class="footer-container perks-container">
+        <div class="footer-perk-item" onclick="openTrackModal(event)">
+          <div class="perk-icon-wrap">
+            <svg width="28" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="1" y="3" width="15" height="13"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <span class="perk-title">ORDER TRACKING</span>
+        </div>
+
+        <div class="footer-perk-item" onclick="openStoreLocatorModal()">
+          <div class="perk-icon-wrap">
+            <svg width="24" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <span class="perk-title">STORE LOCATOR</span>
+        </div>
+
+        <div class="footer-perk-item" onclick="openSupportModal()">
+          <div class="perk-icon-wrap">
+            <svg width="26" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              <path d="M8 9h.01"></path>
+              <path d="M12 9h.01"></path>
+              <path d="M16 9h.01"></path>
+            </svg>
+          </div>
+          <span class="perk-title">SUPPORT 24/7</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer 4 Columns (Screenshot 4) -->
+    <div class="footer-main-content">
+      <div class="footer-container">
+        <div class="footer-columns-grid">
+          
+          <!-- Column 1: CONTACT US -->
+          <div class="footer-nav-col">
+            <h4 class="footer-nav-heading">CONTACT US</h4>
+            <div class="footer-contact-details">
+              <p class="contact-text-item">21 Km Ferozpur Road Lahore Pakistan.</p>
+              <p class="contact-text-item"><a href="mailto:shahid3460817@gmail.com">shahid3460817@gmail.com</a></p>
+              <p class="contact-text-item"><a href="tel:+923032431518">03032431518</a></p>
+            </div>
+            <div class="footer-social-icons">
+              <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Shahid Clothes Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Shahid Clothes Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://youtube.com" target="_blank" aria-label="YouTube" title="Shahid Clothes YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <!-- Column 2: INFORMATION -->
+          <div class="footer-nav-col">
+            <h4 class="footer-nav-heading">INFORMATION</h4>
+            <ul class="footer-menu-links">
+              <li><a href="#blogs" onclick="openInfoModal('blogs'); return false;">Blogs</a></li>
+              <li><a href="#about-us" onclick="openInfoModal('about'); return false;">About Us</a></li>
+              <li><a href="#catalogues" onclick="openInfoModal('catalogues'); return false;">Catalogues</a></li>
+              <li><a href="#privacy-policy" onclick="openInfoModal('privacy'); return false;">Privacy Policy</a></li>
+              <li><a href="#terms-conditions" onclick="openInfoModal('terms'); return false;">Terms & Conditions</a></li>
+              <li><a href="#terms-boutique" onclick="openInfoModal('terms-boutique'); return false;">Terms & Conditions Boutique</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: CUSTOMER SERVICES -->
+          <div class="footer-nav-col">
+            <h4 class="footer-nav-heading">CUSTOMER SERVICES</h4>
+            <ul class="footer-menu-links">
+              <li><a href="#faqs" onclick="openInfoModal('faqs'); return false;">FAQs</a></li>
+              <li><a href="#order-tracking" onclick="openTrackModal(event); return false;">Order Tracking</a></li>
+              <li><a href="#store-locator" onclick="openStoreLocatorModal(); return false;">Store Locator</a></li>
+              <li><a href="#contact-us" onclick="openInfoModal('contact'); return false;">Contact Us</a></li>
+              <li><a href="#return-exchange" onclick="openInfoModal('returns'); return false;">Return & Exchange Policy</a></li>
+              <li><a href="#return-boutique" onclick="openInfoModal('returns-boutique'); return false;">Return & Exchange Policy Boutique</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: NEWSLETTER -->
+          <div class="footer-nav-col newsletter-col">
+            <h4 class="footer-nav-heading">NEWSLETTER</h4>
+            <p class="newsletter-caption">Sign up to our newsletter to receive exclusive offers.</p>
+            <form class="newsletter-form-exact" onsubmit="handleNewsletterSubmit(event)">
+              <div class="newsletter-input-group">
+                <input type="email" id="footerNewsletterEmail" placeholder="E-mail" required autocomplete="email">
+              </div>
+              <button type="submit" class="newsletter-subscribe-btn">SUBSCRIBE</button>
+            </form>
+            <div id="newsletterConfirmation" class="newsletter-confirm-msg" style="display: none;"></div>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar (Screenshot 4: Copyright, Back to Top, Visa & Mastercard) -->
+        <div class="footer-bottom-exact">
+          <div class="footer-bottom-left">
+            <span class="footer-copyright-text">&copy; 2026 - SHAHID CLOTHES • Wear Your Story</span>
+            <button type="button" class="footer-back-to-top-btn" onclick="scrollToTop()" aria-label="Back to Top" title="Back to Top">
+              <i class="fa-solid fa-arrow-up"></i>
+            </button>
+          </div>
+          <div class="footer-payment-badges">
+            <span class="pay-logo visa-logo">VISA</span>
+            <span class="pay-logo mc-logo"><span class="mc-circle-red"></span><span class="mc-circle-yellow"></span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== 6. SLIDE-OUT CART DRAWER ==================== -->
+  <div class="drawer-overlay" id="cartOverlay" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3>SHOPPING BAG (<span id="cartDrawerCount">0</span>)</h3>
+      <button class="close-drawer-btn" onclick="closeCartDrawer()" aria-label="Close cart">&times;</button>
+    </div>
+
+    <!-- Free Shipping Goal Progress Bar -->
+    <div class="free-shipping-bar" id="shippingBar">
+      <div class="shipping-msg" id="shippingMsg">Add Rs. 2,500 more to unlock FREE Delivery!</div>
+      <div class="shipping-progress">
+        <div class="shipping-fill" id="shippingFill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items List Container -->
+    <div class="cart-items-list" id="cartItemsList">
+      <!-- Injected dynamically -->
+    </div>
+
+    <!-- Cart Footer & Checkout Area -->
+    <div class="cart-drawer-footer" id="cartFooter">
+      <div class="promo-box">
+        <input type="text" id="couponInput" placeholder="Promo code (SHAHID10, WELCOME500)" style="text-transform: uppercase;">
+        <button type="button" onclick="applyPromoCode()">APPLY</button>
+      </div>
+      <div class="promo-status" id="promoStatus"></div>
+
+      <div class="cart-totals">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">Rs. 0</span>
+        </div>
+        <div class="total-row discount-row" id="discountRow" style="display: none;">
+          <span>Discount Applied</span>
+          <span id="cartDiscount">- Rs. 0</span>
+        </div>
+        <div class="total-row">
+          <span>Estimated Shipping</span>
+          <span id="cartShipping">Rs. 200</span>
+        </div>
+        <div class="total-row grand-total">
+          <span>Total (PKR)</span>
+          <span id="cartGrandTotal">Rs. 0</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block checkout-btn" onclick="openCheckoutPage()">
+        PROCEED TO CASH ON DELIVERY CHECKOUT <i class="fa-solid fa-arrow-right"></i>
+      </button>
+      
+      <button class="btn btn-whatsapp btn-block" onclick="orderCartViaWhatsApp()">
+        <i class="fa-brands fa-whatsapp"></i> Quick Order Entire Bag via WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==================== 7. CASH ON DELIVERY (COD) CHECKOUT MODAL ==================== -->
+  <div class="modal-overlay" id="checkoutOverlay" onclick="closeCheckoutModal(event)">
+    <div class="modal-dialog checkout-dialog" onclick="event.stopPropagation()">
+      <button class="close-modal-btn" onclick="closeCheckoutModal()">&times;</button>
+      <div class="checkout-modal-content">
+        <div class="checkout-header">
+          <div class="checkout-brand">N I S H A T &bull; C H E C K O U T</div>
+          <h2>CASH ON DELIVERY (COD) ORDER</h2>
+          <p>Deliver safely to your doorstep anywhere in Pakistan. Pay rider upon receiving package.</p>
+        </div>
+
+        <form id="checkoutForm" onsubmit="handlePlaceOrder(event)">
+          <div class="form-section">
+            <h4 class="form-subtitle"><i class="fa-solid fa-user"></i> 1. Contact Details</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="custName">Full Name *</label>
+                <input type="text" id="custName" placeholder="e.g. Fatima Khan" required>
+              </div>
+              <div class="form-group">
+                <label for="custPhone">Mobile Phone (for Delivery Rider) *</label>
+                <input type="tel" id="custPhone" placeholder="03032431518" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="custWhatsApp">WhatsApp Number</label>
+                <input type="tel" id="custWhatsApp" placeholder="03032431518">
+              </div>
+              <div class="form-group">
+                <label for="custEmail">Email Address (Optional)</label>
+                <input type="email" id="custEmail" placeholder="shahid3460817@gmail.com">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4 class="form-subtitle"><i class="fa-solid fa-location-dot"></i> 2. Delivery Address in Pakistan</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="custCity">City *</label>
+                <select id="custCity" required>
+                  <option value="" disabled selected>Select Your City...</option>
+                  <option value="Lahore">Lahore</option>
+                  <option value="Karachi">Karachi</option>
+                  <option value="Islamabad">Islamabad</option>
+                  <option value="Rawalpindi">Rawalpindi</option>
+                  <option value="Faisalabad">Faisalabad</option>
+                  <option value="Multan">Multan</option>
+                  <option value="Peshawar">Peshawar</option>
+                  <option value="Quetta">Quetta</option>
+                  <option value="Sialkot">Sialkot</option>
+                  <option value="Gujranwala">Gujranwala</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Bahawalpur">Bahawalpur</option>
+                  <option value="Sargodha">Sargodha</option>
+                  <option value="Abbottabad">Abbottabad</option>
+                  <option value="Other">Other City</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="custArea">Town / Sector / Colony *</label>
+                <input type="text" id="custArea" placeholder="e.g. DHA / Gulberg / F-10" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="custAddress">Complete Street Address (House #, Street) *</label>
+              <textarea id="custAddress" rows="2" placeholder="House # 12, Street # 4, Block C..." required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="custNote">Special Delivery Instructions (Optional)</label>
+              <input type="text" id="custNote" placeholder="e.g. Call before delivery">
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h4 class="form-subtitle"><i class="fa-solid fa-wallet"></i> 3. Payment Method</h4>
+            <div class="payment-options">
+              <label class="payment-option-card active">
+                <input type="radio" name="paymentMethod" value="COD" checked>
+                <div class="pay-info">
+                  <strong>Cash on Delivery (COD)</strong>
+                  <span>Pay cash directly when rider delivers at your doorstep.</span>
+                </div>
+                <i class="fa-solid fa-circle-check pay-check"></i>
+              </label>
+            </div>
+          </div>
+
+          <div class="checkout-summary-box">
+            <div class="summary-line">
+              <span>Items Total:</span>
+              <span id="checkoutSubtotal">Rs. 0</span>
+            </div>
+            <div class="summary-line" id="checkoutDiscountLine" style="display: none;">
+              <span>Discount:</span>
+              <span id="checkoutDiscount">- Rs. 0</span>
+            </div>
+            <div class="summary-line">
+              <span>Delivery Charges:</span>
+              <span id="checkoutShipping">Rs. 0</span>
+            </div>
+            <div class="summary-line total-line">
+              <strong>Grand Total (Pay on Delivery):</strong>
+              <strong id="checkoutGrandTotal">Rs. 0</strong>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block place-order-btn">
+            CONFIRM & PLACE ORDER NOW <i class="fa-solid fa-check"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 8. ORDER CONFIRMATION SUCCESS MODAL ==================== -->
+  <div class="modal-overlay" id="orderSuccessOverlay">
+    <div class="modal-dialog success-dialog">
+      <div class="success-icon-wrap">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2>SHUKRIYA! ORDER CONFIRMED</h2>
+      <p class="success-lead">Your order has been placed with Shahid Clothes via Cash on Delivery!</p>
+      
+      <div class="order-details-box">
+        <div class="detail-row">
+          <span>Order Reference:</span>
+          <strong id="confirmOrderId">#NL-89241</strong>
+        </div>
+        <div class="detail-row">
+          <span>Customer Name:</span>
+          <strong id="confirmCustName">-</strong>
+        </div>
+        <div class="detail-row">
+          <span>Delivery City:</span>
+          <strong id="confirmCity">-</strong>
+        </div>
+        <div class="detail-row">
+          <span>Total Amount to Pay Rider:</span>
+          <strong class="highlight-price" id="confirmAmount">Rs. 0</strong>
+        </div>
+        <div class="detail-row">
+          <span>Estimated Delivery:</span>
+          <strong>2 to 4 Working Days (Nationwide)</strong>
+        </div>
+      </div>
+
+      <div class="success-actions">
+        <button class="btn btn-whatsapp btn-block" onclick="sendOrderReceiptToWhatsApp()">
+          <i class="fa-brands fa-whatsapp"></i> Confirm & Track on WhatsApp
+        </button>
+        <button class="btn btn-outline btn-block" onclick="closeOrderSuccessModal(); showHomePage();">
+          CONTINUE SHOPPING
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 9. TRACK ORDER MODAL ==================== -->
+  <div class="modal-overlay" id="trackModalOverlay" onclick="closeTrackModal(event)">
+    <div class="modal-dialog track-dialog" onclick="event.stopPropagation()">
+      <button class="close-modal-btn" onclick="closeTrackModal()">&times;</button>
+      <div class="track-header">
+        <div class="track-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+        <h3>TRACK YOUR ORDER</h3>
+        <p>Enter your Order ID (e.g. #SC-89241) or phone number to check live courier tracking status.</p>
+      </div>
+      <form class="track-form" onsubmit="handleTrackOrder(event)">
+        <div class="track-input-wrap">
+          <input type="text" id="trackInput" placeholder="Order ID or Phone (03032431518...)" required>
+          <button type="submit" class="btn btn-primary">TRACK</button>
+        </div>
+      </form>
+      <div class="track-result" id="trackResult" style="display: none;"></div>
+    </div>
+  </div>
+
+  <!-- ==================== 10. WISHLIST DRAWER ==================== -->
+  <div class="drawer-overlay" id="wishlistOverlay" onclick="closeWishlistDrawer()"></div>
+  <aside class="wishlist-drawer" id="wishlistDrawer">
+    <div class="cart-drawer-header">
+      <h3>YOUR WISHLIST (<span id="wishlistDrawerCount">0</span>)</h3>
+      <button class="close-drawer-btn" onclick="closeWishlistDrawer()" aria-label="Close wishlist">&times;</button>
+    </div>
+    <div class="wishlist-items-list" id="wishlistItemsList"></div>
+  </aside>
+
+  <!-- ==================== 11. SEARCH OVERLAY ==================== -->
+  <div class="modal-overlay" id="searchOverlay" onclick="closeSearchModal(event)">
+    <div class="search-modal-dialog" onclick="event.stopPropagation()">
+      <div class="search-modal-header">
+        <div class="search-input-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="siteSearchInput" placeholder="Search Shahid Clothes unstitched lawn, festive silk, pret kurtas, shawls..." oninput="handleInstantSearch(this.value)" autofocus>
+          <button class="clear-search-btn" onclick="clearSearchInput()">&times;</button>
+        </div>
+        <button class="close-search-btn" onclick="closeSearchModal()">&times;</button>
+      </div>
+      <div class="popular-searches">
+        <span>Popular:</span>
+        <button onclick="applySearchTag('42602216')">42602216</button>
+        <button onclick="applySearchTag('3-Piece')">3-Piece</button>
+        <button onclick="applySearchTag('Lawn')">Lawn</button>
+        <button onclick="applySearchTag('Boutique')">Boutique</button>
+        <button onclick="applySearchTag('Pret')">Pret</button>
+      </div>
+      <div class="search-results-container" id="searchResultsContainer"></div>
+    </div>
+  </div>
+
+  <!-- ==================== 12. STORE LOCATOR MODAL ==================== -->
+  <div class="modal-overlay" id="storeLocatorModalOverlay" onclick="closeStoreLocatorModal(event)">
+    <div class="modal-dialog store-locator-dialog" onclick="event.stopPropagation()">
+      <button class="close-modal-btn" onclick="closeStoreLocatorModal()">&times;</button>
+      <div class="store-modal-header">
+        <div class="store-modal-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <h3>SHAHID CLOTHES STORE LOCATOR</h3>
+        <p>Find your nearest official Shahid Clothes boutique across Pakistan.</p>
+        <div class="store-city-filter">
+          <button class="city-pill active" onclick="filterStores('all', this)">All (7)</button>
+          <button class="city-pill" onclick="filterStores('lahore', this)">Lahore</button>
+          <button class="city-pill" onclick="filterStores('karachi', this)">Karachi</button>
+          <button class="city-pill" onclick="filterStores('islamabad', this)">Islamabad</button>
+          <button class="city-pill" onclick="filterStores('faisalabad', this)">Faisalabad</button>
+        </div>
+      </div>
+      <div class="stores-list-container" id="storesListContainer">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 13. 24/7 SUPPORT MODAL ==================== -->
+  <div class="modal-overlay" id="supportModalOverlay" onclick="closeSupportModal(event)">
+    <div class="modal-dialog support-dialog" onclick="event.stopPropagation()">
+      <button class="close-modal-btn" onclick="closeSupportModal()">&times;</button>
+      <div class="support-modal-header">
+        <div class="support-modal-icon"><i class="fa-solid fa-headset"></i></div>
+        <h3>SHAHID CLOTHES 24/7 CUSTOMER CARE</h3>
+        <p>Our client service specialists are available around the clock to assist you.</p>
+      </div>
+      <div class="support-channels-grid">
+        <a href="https://wa.me/923032431518?text=Assalam-o-Alaikum%20Shahid%20Clothes%2C%20I%20need%20assistance" target="_blank" class="support-channel-card whatsapp-card">
+          <i class="fa-brands fa-whatsapp"></i>
+          <h4>WhatsApp Helpline</h4>
+          <p>Instant chat response for order status, exchanges & sizing guidance.</p>
+          <span class="channel-action">Chat Now (24/7) &rarr;</span>
+        </a>
+
+        <a href="tel:+923032431518" class="support-channel-card phone-card">
+          <i class="fa-solid fa-phone"></i>
+          <h4>UAN Phone Helpline</h4>
+          <p>+92 (42) 111 647 428</p>
+          <span class="channel-action">Call Specialist &rarr;</span>
+        </a>
+
+        <a href="mailto:shahid3460817@gmail.com" class="support-channel-card email-card">
+          <i class="fa-regular fa-envelope"></i>
+          <h4>Email Support</h4>
+          <p>shahid3460817@gmail.com</p>
+          <span class="channel-action">Send Email &rarr;</span>
+        </a>
+
+        <div class="support-channel-card hours-card">
+          <i class="fa-regular fa-clock"></i>
+          <h4>Operating Hours</h4>
+          <p>Digital Helpline: 24 Hours / 7 Days<br>Retail Outlets: 10:00 AM – 11:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 14. UNIVERSAL INFORMATION & POLICY MODAL ==================== -->
+  <div class="modal-overlay" id="infoModalOverlay" onclick="closeInfoModal(event)">
+    <div class="modal-dialog info-policy-dialog" onclick="event.stopPropagation()">
+      <button class="close-modal-btn" onclick="closeInfoModal()">&times;</button>
+      <div class="info-modal-header">
+        <h3 id="infoModalTitle">INFORMATION</h3>
+        <span class="info-modal-subtitle" id="infoModalSubtitle">Shahid Clothes Official Service</span>
+      </div>
+      <div class="info-modal-body" id="infoModalBody">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="info-modal-footer">
+        <button class="btn btn-primary" onclick="closeInfoModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 12. FLOATING WHATSAPP CHAT BUTTON (SCREENSHOT 5) ==================== -->
+  <a href="https://wa.me/923032431518?text=Assalam-o-Alaikum%20Shahid%20Clothes%2C%20I%20want%20to%20order%20a%20ladies%20suit%20via%20Cash%20on%20Delivery" class="floating-whatsapp" target="_blank" aria-label="Chat on WhatsApp" title="WhatsApp Instant Support">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ==================== 13. MOBILE BOTTOM APP BAR ==================== -->
+  <nav class="mobile-bottom-nav">
+    <a href="#home" class="bottom-nav-item active" onclick="showHomePage(event)">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="#shop-grid" class="bottom-nav-item" onclick="openCategoryPage('all', 'SHOP ALL', event)">
+      <i class="fa-solid fa-shirt"></i>
+      <span>Shop</span>
+    </a>
+    <a href="#search" class="bottom-nav-item" onclick="openSearchModal(); return false;">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <span>Search</span>
+    </a>
+    <a href="#wishlist" class="bottom-nav-item" onclick="openWishlistDrawer(); return false;">
+      <i class="fa-regular fa-heart"></i>
+      <span class="mobile-badge" id="mobileWishlistBadge">0</span>
+      <span>Wishlist</span>
+    </a>
+    <a href="#cart" class="bottom-nav-item" onclick="openCartDrawer(); return false;">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="mobile-badge" id="mobileCartBadge">0</span>
+      <span>Bag</span>
+    </a>
+  </nav>
+
+  <!-- Notification Toast Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

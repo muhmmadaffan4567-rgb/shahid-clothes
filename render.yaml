@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: shahid-clothes
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: ADMIN_EMAIL
+        value: shahid3460817@gmail.com
+      - key: ADMIN_PASSWORD
+        value: shahidclothes2026

@@ -1,0 +1,8 @@
+# robots.txt for Shahid Clothes
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/admin/
+
+# Sitemaps
+Sitemap: https://kentucky-newest-bend-ratios.trycloudflare.com/sitemap.xml
