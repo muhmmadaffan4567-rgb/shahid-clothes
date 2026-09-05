@@ -5,4 +5,4 @@ Disallow: /admin/
 Disallow: /api/admin/
 
 # Sitemaps
-Sitemap: https://kentucky-newest-bend-ratios.trycloudflare.com/sitemap.xml
+Sitemap: https://shahid-clothes.vercel.app/sitemap.xml
