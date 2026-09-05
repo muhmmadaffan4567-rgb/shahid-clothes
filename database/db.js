@@ -269,6 +269,9 @@ function loadDefaultProductsIntoMemory() {
   }
 }
 
+// Pre-populate memory store so resilient fallback has catalog immediately
+loadDefaultProductsIntoMemory();
+
 async function seedInitialDataIfEmpty() {
   if (!pool) return;
   try {
