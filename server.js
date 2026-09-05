@@ -214,7 +214,7 @@ app.get('*', (req, res) => {
 
 // Initialize database & start server
 initDatabase().then(() => {
-  if (process.env.NODE_ENV !== 'test') {
+  if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
     app.listen(PORT, () => {
       console.log(`================================================================`);
       console.log(`🚀 [Server]: E-Commerce Server & API running at http://localhost:${PORT}`);
