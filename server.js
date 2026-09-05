@@ -214,14 +214,18 @@ app.get('*', (req, res) => {
 
 // Initialize database & start server
 initDatabase().then(() => {
-  app.listen(PORT, () => {
-    console.log(`================================================================`);
-    console.log(`🚀 [Server]: E-Commerce Server & API running at http://localhost:${PORT}`);
-    console.log(`🛍️ [Storefront]: http://localhost:${PORT}`);
-    console.log(`👑 [Admin Portal]: http://localhost:${PORT}/admin`);
-    console.log(`🗄️ [MySQL Status]: ${db.isMySqlConnected() ? 'CONNECTED TO DATABASE' : 'IN-MEMORY RESILIENT MODE'}`);
-    console.log(`================================================================`);
-  });
+  if (process.env.NODE_ENV !== 'test') {
+    app.listen(PORT, () => {
+      console.log(`================================================================`);
+      console.log(`🚀 [Server]: E-Commerce Server & API running at http://localhost:${PORT}`);
+      console.log(`🛍️ [Storefront]: http://localhost:${PORT}`);
+      console.log(`👑 [Admin Portal]: http://localhost:${PORT}/admin`);
+      console.log(`🗄️ [MySQL Status]: ${db.isMySqlConnected() ? 'CONNECTED TO DATABASE' : 'IN-MEMORY RESILIENT MODE'}`);
+      console.log(`================================================================`);
+    });
+  }
 }).catch(err => {
   console.error('Fatal initialization error:', err);
 });
+
+module.exports = app;
