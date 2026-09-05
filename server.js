@@ -213,8 +213,8 @@ app.get('*', (req, res) => {
 });
 
 // Initialize database & start server
-initDatabase().then(() => {
-  if (process.env.NODE_ENV !== 'test' && !process.env.VERCEL) {
+if (require.main === module) {
+  initDatabase().then(() => {
     app.listen(PORT, () => {
       console.log(`================================================================`);
       console.log(`🚀 [Server]: E-Commerce Server & API running at http://localhost:${PORT}`);
@@ -223,9 +223,9 @@ initDatabase().then(() => {
       console.log(`🗄️ [MySQL Status]: ${db.isMySqlConnected() ? 'CONNECTED TO DATABASE' : 'IN-MEMORY RESILIENT MODE'}`);
       console.log(`================================================================`);
     });
-  }
-}).catch(err => {
-  console.error('Fatal initialization error:', err);
-});
+  }).catch(err => {
+    console.error('Fatal initialization error:', err);
+  });
+}
 
 module.exports = app;
